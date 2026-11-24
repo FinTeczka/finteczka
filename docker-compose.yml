@@ -1,0 +1,26 @@
+# FinTeczka - uruchomienie w Dockerze / Podmanie (linux/amd64 oraz linux/arm64)
+# Start:        docker compose up -d          -> http://<adres-serwera>:8080
+# Aktualizacja: docker compose pull && docker compose up -d
+services:
+  finteczka:
+    image: ghcr.io/finteczka/finteczka:latest
+    container_name: finteczka
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      TZ: Europe/Warsaw
+      # Za reverse proxy (Caddy, nginx, Traefik) wpisz jego adres IPv4 lub podsieć, np. 172.18.0.2
+      # FINTECZKA_Hosting__TrustedProxies: ""
+      # Opcjonalny feed wartości obligacji dla Portfolio Performance (/api/bond-feed)
+      # FINTECZKA_BondFeed__ApiKey: ""
+      # Opcjonalny plik klucza sejfu z hosta (zamontowany poniżej jako tylko do odczytu)
+      # FINTECZKA_Secrets__HostKeyFile: "/run/secrets/finteczka_host.key"
+    volumes:
+      - finteczka-data:/data
+      # Opcjonalnie - plik klucza sejfu poza wolumenem danych (kontener działa jako UID 1654 / użytkownik app):
+      #   openssl rand -out ./host.key 32 && sudo chown 1654:1654 ./host.key && sudo chmod 400 ./host.key
+      # - ./host.key:/run/secrets/finteczka_host.key:ro
+
+volumes:
+  finteczka-data:
