@@ -74,7 +74,7 @@ Za serwerem pośredniczącym (Caddy, nginx, Traefik) wymagana jest obsługa WebS
 
 ## Zgłaszanie błędów i brakujących formatów importu
 
-Znalazłeś błąd albo masz plik z banku/biura maklerskiego, którego FinTeczka jeszcze nie rozpoznaje? Załóż zgłoszenie w zakładce **Issues** (pamiętaj o usunięciu prawdziwych kwot i danych osobowych z przykładowych plików).
+Znalazłeś błąd albo masz plik z banku/biura maklerskiego, którego FinTeczka jeszcze nie rozpoznaje? Napisz na **kontakt@finteczka.pl** (pamiętaj o usunięciu prawdziwych kwot i danych osobowych z przykładowych plików).
 
 ## Licencja i zastrzeżenia
 
