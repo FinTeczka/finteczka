@@ -27,9 +27,9 @@ pct exec <CTID> -- finteczka-update
 
 ---
 
-### 2. Debian / Ubuntu / istniejący kontener LXC (x64 oraz ARM64)
+### 2. Debian / Ubuntu / istniejący kontener LXC / mały VPS (x64 oraz ARM64)
 
-Jedno polecenie rozpoznaje architekturę (`linux-x64` lub `linux-arm64`), sprawdza sumę kontrolną SHA-256 i instaluje usługę systemową `finteczka` (port `8080`):
+Jedno polecenie rozpoznaje architekturę (`linux-x64` lub `linux-arm64`), sprawdza sumę kontrolną SHA-256 i instaluje usługę systemową `finteczka` (port `8080`). W tym wariancie program działa sprawnie już na małym serwerze VPS z 1 GB RAM i 10 GB dysku:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/finteczka/finteczka/main/install.sh | sudo bash
